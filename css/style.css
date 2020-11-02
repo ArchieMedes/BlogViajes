@@ -1,0 +1,229 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}  
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* ----------------- NAVEGACION RESPONSIVE ----- */
+.barra {
+    overflow: hidden; /* esconde lo que se pase de los limites del max-height del "navegacion-principal" */
+}
+.mobile-menu {
+    color: white;
+    font-size: 2rem; /* aunque sea un ícono, se trata como fuente */
+    text-align: center;
+    display: block;
+    padding: 20px 0;
+}
+
+#nav:target {
+    max-height: 800px;
+}
+
+.navegacion-principal {
+    max-height: 0;
+}
+@media (min-width: 768px) {
+    .navegacion-principal {
+        max-height: unset; /* resetea o deshace la modificacion del "max-height" */
+    }
+    .mobile-menu,
+    .cerrar {
+        display: none!important; /* "!importan" para ignorar un "inline-block" que agrega FONT AWESOME al importarlos en el <head> */
+    } 
+}
+
+
+.boton {
+    background-color: #00B8E4;
+    padding: 10px 100px;
+    display: inline-block; /* Da más control al margen , si no, no aplica el MARGINA DE LA SIGUIENTE LINEA*/
+    margin-top: 1rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color .3s ease-in-out; /* DA TRANSICION AL POSICIONARSE EN UN BOTON */
+}
+
+.boton:hover {
+    background-color: hsla(192, 100%, 30%, 0.761);
+}
+
+.site-header {
+    padding: 20px 0;
+}
+
+.contenedor {
+    /* TÉCNICA PARA CETRALIZAR LAYOUTS */
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 85%;
+    overflow: auto; /* hace que el contenedor tenga tamaño actually, sirve para limpiar los FLOATS, o sea que no afecten */
+}
+
+/* --------------------------------------------- NAVEGACIÓN ---------------------------------------- */
+.barra {
+    margin-top: 3rem;
+    background-color: #DB008D;
+}
+
+.navegacion-principal a {
+    color: white;
+    text-decoration: none; /* Quita subrayado de los enlaces "a" por default */
+    font-size: 22px;
+    display: block; /* los "a" tienen un display: line por "deault", lo cambianos a block para que cada enlace tome todo el espacio disponibl */
+    text-align: center;
+    padding: 2rem 0;
+}
+
+@media (min-width: 1032px) {
+    .navegacion-principal a {
+        display: inline-block; /* INLINE-BLOCK respeta el PADDING del enfoque MOBILE FIRST en la etiqueta anterior */
+        margin-right: 2rem;
+    }    
+}
+
+.navegacion-principal a:hover {
+    background-color: #00B8E4;
+}
+
+/* ----------------------------------------------- CONTENEDORES PRINCIPALES ---------------------- */
+
+/* ----------------------------------- MAIN ------ */
+.contenido-principal {
+    margin-top: 3rem;
+}
+
+.contenido-principal,
+.sidebar {
+    padding-top: 2rem;
+}
+
+/* ---------------- SIDEBAR ----------- */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 1rem 1rem 1rem 0;
+}
+
+.sidebar ul li:hover  {
+    background-color: #00B8E4;
+}
+
+.sidebar ul li a {
+    color: #00B8E4;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.sidebar ul li:hover a { /* el hover es sobre el LI cuando quiero que se active, no solo en el enlace */
+    color: white;
+}
+
+@media (min-width: 1032px) {
+    .contenido-principal {
+        width: 70%;
+        float: left;
+        padding: 0 60px 0 0;
+    }
+    
+    /* ----------------------------------- SIDEBAR *****/
+    .sidebar {
+        width: 30%;
+        float: right;
+        padding: 0;
+        margin-top: 3rem;
+    }
+}
+
+/* ----------------------------------- ARTICULOS DE BLOG ----- */
+h2 {
+    color: #00B8E4;
+    margin-bottom: 2rem;
+}
+
+.articulo {
+    margin-bottom: 6rem;
+}
+
+.articulo:last-of-type {
+    margin-bottom: 0;
+}
+
+.articulo img {
+    display: block;
+}
+
+@media (min-width: 480px) {
+    .articulo img {
+        width: 300px;
+        float: left;
+        margin: 0 30px 0 0;
+    }
+    
+}
+
+.articulo p {
+    text-align: justify; /* Justifica el texto */
+}
+
+/* ------------------------------------------------- FOOTER ------------ */
+.footer-sitio {
+    color: white;
+    background-color: #DB008D;
+    padding-top: 4rem;
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.footer-sitio h2 {
+    color: white;
+}
+
+.footer-sitio a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    margin-right: 20px;
+}
+.footer-sitio a:last-of-type {
+    margin-right: 0;
+}
+
+@media (min-width: 1100px) {
+    .footer-sitio .nosotros {
+        float: left;
+        width: 30%;
+        text-align: left;
+    }
+    .footer-sitio .menu {
+        float: right;
+        width: 50%;
+        text-align: right;
+    }
+}
+
+.copyright {
+    background-color: #b10073;
+    margin: 50px 0 0 0;
+    padding: 20px 0;
+}
